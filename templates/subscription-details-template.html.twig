@@ -1,0 +1,24 @@
+<fieldset>
+  <p>
+    <strong>User Name:</strong> {{ user.getAccountName() }}</br>
+    <strong>User Email:</strong> {{ user.getEmail() }}</br>
+    <strong>Card Number:</strong> {{ subscription.getCardNumber() }}
+  </p>
+  <p>
+    <strong>Price per month: </strong> $29 </br>
+    <strong>Total Months: </strong> {{ subscription.getDurationMonths() }} </br>
+    <strong>Last payout quantity: </strong> ${{ total_price }} </br></br>
+    <strong>Subscription start Date:</strong> {{ subscription.getStartDate() }}</br>
+    <strong>Subscription status:</strong> {{ subscription.getSubscriptionStatus()  }}</br>
+    {% if subscription.getRenewStatus() == 1 %}
+      <strong>AutoRenew:</strong> Activated</br>
+      <strong>Next renew date:</strong> {{ next_renew_date }} </br>
+    {% else %}
+      <strong>AutoRenew:</strong> Disable</br>
+    {% endif %}
+    {% if remaining >= 1 %}
+      <strong>Remaining months to renew:</strong> {{ remaining }} </br>
+    {% endif %}
+  </p>
+</fieldset>
+

@@ -1,0 +1,10 @@
+subscription.add:
+  title: 'Subscribe Now!'
+  weight: 30
+  route_name: subscription_add.form
+  menu_name: main
+subscription.detail:
+  title: 'See my Subscription'
+  weight: 20
+  route_name: subscription_controller_detail.content
+  menu_name: main

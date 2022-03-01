@@ -1,0 +1,22 @@
+subscription_add.form:
+  path: '/subscription/new-subscription'
+  defaults:
+    _title: 'Subscribe Now!'
+    _form: '\Drupal\subscription\Form\SubscriptionForm'
+  requirements:
+    _custom_access: '\Drupal\subscription\Controller\SubscriptionController::accessSubcriptionForm'
+
+subscription_controller_new.content:
+  path: ''
+  defaults:
+    _controller: '\Drupal\subscription\Controller\SubscriptionController::postSubscription'
+  requirements:
+    _permission: 'access content'
+
+subscription_controller_detail.content:
+  path: '/subscription/details'
+  defaults:
+    _title: 'Subscription  Details'
+    _controller: '\Drupal\subscription\Controller\SubscriptionController::showSubscription'
+  requirements:
+    _custom_access: '\Drupal\subscription\Controller\SubscriptionController::accessSubcriptionDetail'
